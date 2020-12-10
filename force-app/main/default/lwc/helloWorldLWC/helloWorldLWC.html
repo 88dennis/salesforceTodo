@@ -1,0 +1,23 @@
+<template>
+    <div if:true={showComp}>
+    <template for:each={records} for:item="record">
+        <li class="slds-item" key={record.Id}>
+            <lightning-layout horizontal-align="spread" vertical-align="center">
+                <lightning-layout-item padding="horizontal-small">
+                    Hello id:{record.Id} - {record.LastName} 
+                </lightning-layout-item>
+        
+                <!-- <lightning-layout-item padding="horizontal-small">
+                    <lightning-button-icon onclick={handleClickDeleteBtn} name={todoTask.id} icon-name="utility:delete" alternative-text="Delete" title="Delete">
+                    </lightning-button-icon>
+                </lightning-layout-item> -->
+            </lightning-layout>
+        </li>
+        
+        </template>
+
+<button onclick={closeModal}> Close</button>
+</div>
+</template>
+
+<!-- if:true={record.isModal__c} -->

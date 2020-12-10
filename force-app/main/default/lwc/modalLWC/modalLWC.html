@@ -1,0 +1,107 @@
+<template>
+    <div class="slds-theme_default">
+        <template if:true={openmodel}>
+        <div class="demo-only" style="height: 640px; z-index:200">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={cancelFunction}>
+                            <lightning-icon icon-name="utility:close" size="medium">
+                            </lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <!-- <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Potential Duplicate</h2> -->
+
+                        <div class="slds-grid slds-wrap">
+                          <div class="slds-col slds-size_1-of-12">
+                            <span>
+
+
+                        <lightning-icon slot="actions" size="xx-small" icon-name="action:info" alternative-text="Info" title="You have a duplicate contact"></lightning-icon>
+                            </span>
+                          </div>
+                          <div class="slds-col slds-size_10-of-12">
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Potential Duplicate </h2>
+                          </div>
+
+                          <div class="slds-col slds-size_1-of-12">
+                            <span></span>
+                          </div>
+
+
+                        </div>
+                    </header>
+
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <ul class="slds-has-dividers_top slds-has-block-links_space">
+                            <li class="slds-item slds_item_dms" >
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_6-of-12">
+                                        <span>First Name</span>
+                                        <span style="padding-left:5px; padding-right:5px;">:</span>
+                                        <span>{firstName}</span>
+
+                                      </div>
+                                      <div class="slds-col slds-size_6-of-12">
+                                        <span>Last Name</span>
+                                        <span style="padding-left:5px; padding-right:5px;">:</span>
+
+                                        <span>{lastName}</span>
+
+                                      </div>
+                                    </div>
+                            </li>
+                            <li class="slds-item slds_item_dms">
+                              
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_6-of-12">
+                                <span>Account</span>
+                                <span style="padding-left:5px; padding-right:5px;">:</span>
+
+                                <span>{accountName}</span>
+
+                              </div>
+                              <div class="slds-col slds-size_6-of-12">
+                                <span>Email</span>
+                                <span style="padding-left:5px; padding-right:5px;">:</span>
+                                <span>{email}</span>
+
+                              </div>
+                            </div>
+                            </li>
+                            <li class="slds-item slds_item_dms">
+                              
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_12-of-12">
+                                  <span>Continue Creating?</span>
+                                </div>
+                              </div>
+
+                            </li>
+                          </ul>
+
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_4-of-12">
+                                        <button onclick={saveFunction} class="yes_and_no_btn">Yes</button>
+                                      </div>
+                                      <div class="slds-col slds-size_4-of-12">
+                                        <button onclick={handleClickNo} class="yes_and_no_btn">No</button>
+                                      </div>
+                                      <div class="slds-col slds-size_4-of-12">
+                                        <span></span>
+                                      </div>
+                                    </div>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <!-- <lightning-button label="No" variant="neutral" onclick={handleClickNo}></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp; -->
+                        <!-- <lightning-button label="Yes" variant="brand" onclick={saveFunction}></lightning-button> -->
+                        <lightning-button label="Cancel" variant="neutral" onclick={cancelFunction}></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+        </template>
+</div>
+</template>

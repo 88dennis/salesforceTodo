@@ -1,0 +1,24 @@
+<template>
+    
+    <!-- <h1>Hello World {myId}</h1> -->
+    <h1><strong>List of Contact's Schedule</strong></h1>
+
+    <dl class="slds-list_horizontal slds-wrap">
+        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Contact Name"><strong>Contact Name :</strong></dt>
+        <dd class="slds-item_detail slds-truncate" title="Contact Name Label"><strong>{contactName}</strong></dd>
+        <br/>
+        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Contact Address"><strong>Contact Address :</strong></dt>
+        <dd class="slds-item_detail slds-truncate" title="Contact Address Label"><strong>{contactAddress}</strong></dd>
+        <br/>
+        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Contact Phone"><strong>Contact Phone :</strong></dt>
+        <dd class="slds-item_detail slds-truncate" title="Contact Phone Label"><strong>{contactPhone}</strong></dd>
+        <br/>
+        </dl>
+        <br/>
+
+    <lightning-datatable
+    key-field="Id"
+    data={events}
+    columns={columns}>
+</lightning-datatable>
+</template>

@@ -1,0 +1,16 @@
+.THIS.paragraph {
+    color: blue;
+}
+
+.THIS .paragraph1 {
+    color: red;
+}
+
+.THIS .paragraph2 {
+    color: green;
+}
+
+
+.THIS.btn {
+    background-color: steelblue;
+}

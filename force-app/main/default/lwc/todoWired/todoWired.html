@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Todo" style="width: 100%">
+        <lightning-button-icon slot="actions" icon-name="utility:sync" alternative-text="Refresh"
+            onclick={refreshTodoList} title="Refresh">
+        </lightning-button-icon>
+
+        <lightning-layout>
+            <lightning-layout-item padding="around-small" size="12">
+                <ul class="slds-has-dividers_around-space">
+                    <template if:true={todoTasks}>
+
+                        <template for:each={todoTasks} for:item="todoTask">
+                            <li class="slds-item" key={todoTask.Id}>
+                                <lightning-layout horizontal-align="spread" vertical-align="center">
+                                    <lightning-layout-item padding="horizontal-small">
+                                        id:{todoTask.Id} - {todoTask.Subject}
+                                    </lightning-layout-item>
+
+                                    <lightning-layout-item padding="horizontal-small">
+                                        <lightning-button-icon onclick={handleClickDeleteBtn} name={todoTask.id}
+                                            icon-name="utility:delete" alternative-text="Delete" title="Delete">
+                                        </lightning-button-icon>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </li>
+
+                        </template>
+                    </template>
+
+                </ul>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <p slot="footer">
+            <lightning-layout pull-to-boundary="small">
+                <lightning-layout-item padding="horizontal-small" flexibility="grow">
+                    <lightning-input type="text" placeholder="enter new task..." variant="label-hidden" label="New Task"
+                        value={newTask} onchange={handleChangeTaskInput} required></lightning-input>
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="horizontal-small" flexibility="auto">
+                    <lightning-button onclick={handleClickAddBtn} variant="brand" label="Add"> </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </p>
+    </lightning-card>
+</template>

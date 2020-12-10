@@ -1,0 +1,18 @@
+/* :host section {
+    background-color: black;
+} */
+
+.slds-item.slds_item_dms {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.yes_and_no_btn {
+    border-color: transparent;
+    background-color: transparent;
+    text-decoration-line: underline;
+}
+
+.slds-text-heading_medium.slds-hyphenate {
+    margin-left: 10px;
+}
