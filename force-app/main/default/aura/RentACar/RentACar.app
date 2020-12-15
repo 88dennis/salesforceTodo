@@ -1,3 +1,4 @@
 <aura:application extends="force:slds" >
-    <c:CarSearchForm />
+    <c:CarSearch />
+    <c:CarTile />
 </aura:application>

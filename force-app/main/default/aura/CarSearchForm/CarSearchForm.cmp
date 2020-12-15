@@ -11,6 +11,9 @@
     <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
     <!-- <aura:handler name="render" value="{!this}" action="{!c.handleRender}" /> -->
 
+    <!-- you need to use the register event for your lightning event CarSearchFormSubmitEvent -->
+    <aura:registerEvent name="searchFormSubmit" type="c:CarSearchFormSubmitEvent" />
+    
     <lightning:layout horizontalAlign="center">
         <lightning:layoutItem padding="around-medium">
             <lightning:select name="selectItem" aura:id="carTypeList" label="All Types" variant="label-hidden" value="" onchange="{!c.newValueSelected}">

@@ -16,12 +16,22 @@
 	},
     
 	onSearchClick : function(component, event, helper) {
-		helper.helperMethod(component, event, helper);
-	},
+		//helper.helperMethod(component, event, helper);
+        //this fires the event. get the "name" of the event from your html/ markup
+        var searchFormSubmit = component.getEvent("searchFormSubmit");
+         console.log("ASDASDASDDSASDA");
+        console.log(component.find("carTypeList").get("v.value"), "ASDASDASDADSSD");
+        searchFormSubmit.setParams({
+            //find the aura:id of the select form and get its value
+            "carTypeId" : component.find("carTypeList").get("v.value")
+        })
+        console.log(searchFormSubmit);
+        searchFormSubmit.fire();
+	}, 
     
     newValueSelected : function(component, event, helper) {
             var carTypeValue = component.find("carTypeList").get("v.value");
-       		 console.log(carTypeValue);
+       
 	},
     
     createRecord : function(component, event, helper) {
