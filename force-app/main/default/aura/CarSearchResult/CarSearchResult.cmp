@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" extends="c:Base" access="global" >
+    <aura:attribute type="Car__c[]" name="cars" access="public" />
+    <aura:attribute type="String" name="carTypeId" access="private" default="" />
+    
+    <aura:attribute type="boolean" name="carFound" access="private" default="false" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    
+    <lightning:layout multipleRows="true" horizontalALign="center" >
+    	<aura:if isTrue="{!v.carFound}">
+            <aura:iteration items="{!v.cars}" var="car">
+            	<lightning:layoutItem padding="around-small" size="12"
+                                      smallDeviceSize="6"
+                                      mediumDeviceSize="4"
+                                      largeDeviceSize="3"
+                                      >
+                    adgadg
+                    {!car.Name}
+                </lightning:layoutItem>
+            </aura:iteration>
+        </aura:if>
+    </lightning:layout>
+    
+    
+</aura:component>
